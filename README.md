@@ -1,38 +1,47 @@
 # StudentOS — RUAS Academic Hub
 
-A mobile-first Progressive Web App for the 3rd-semester RUAS academic workflow.
+A mobile-first academic companion for the RUAS 3rd-semester timetable.
 
-## Included
-- CSE Sections A–F
-- AIML Sections A–C
-- ISE Sections A–C
-- Smart day/week timetable
-- Live/next/completed class states
-- Break and free-window awareness
+## Current scope
+- CSE A–F, AIML A–C, ISE A–C section selection
+- Exact period-based timetable model
+- **Period 1:** 8:15–9:05 AM
+- **Period 2:** 9:05–9:55 AM
+- **Period 3:** 9:55–10:45 AM
+- **Tea Break:** 10:45–11:15 AM
+- **Period 4:** 11:15 AM–12:05 PM
+- **Period 5:** 12:05–12:55 PM
+- **Period 6:** 12:55–1:45 PM
+- **Lunch Break:** 1:45–2:30 PM
+- **Period 7:** 2:30–3:20 PM
+- **Period 8:** 3:20–4:10 PM
+- **Period 9:** 4:10–5:00 PM
+- Live / next / completed class states
+- Room and lab-batch information
+- Contact Hour indicators from the timetable source
 - Personal attendance: Present / Absent / Not Recorded
 - 75% attendance intelligence
 - Assignment/task tracker
-- Exam/event tracker
-- Local academic assistant
-- Profile + section personalization
-- Dark mode
-- Installable PWA / offline shell
-- No individual faculty names in the public data model
+- **Internal Assessment 1**
+- **Internal Assessment 2**
+- **SEE (Semester End Examination)**
+- Profile and personalization
+- Dark mode and installable PWA shell
 
-## Data source
-The section list and timetable content are based on the supplied **3rd Semester Time Table 2026-27** PDF. The PDF contains 12 pages and the public app intentionally omits faculty names.
+## Academic assessment model
+The app treats the semester assessment structure as three separate events: **IA-1, IA-2 and SEE**. Exact examination dates should only be added when the official academic/examination calendar provides them; they are not guessed from the timetable.
 
-## Important
-Attendance is a **personal tracker**, not official college attendance. If a student does not record a class, it remains **Not Recorded**.
+## Source
+Timetable content is based on the supplied **3rd Semester Time Table 2026-27** PDF. The PDF contains 12 timetable pages. fileciteturn31file0L2-L13
+
+## Attendance note
+Attendance is a personal tracker. Unrecorded sessions remain **Not Recorded** and are never silently counted as Present.
 
 ## Run locally
-Open `index.html` through a local web server so the service worker can register, for example:
-
 ```bash
 python -m http.server 8000
 ```
-
 Then open `http://localhost:8000`.
 
 ## Future backend
-The UI is deliberately backend-ready. A production version can connect Supabase/Auth/Postgres for real student accounts, RLS, shared admin data, push notifications and verified attendance imports.
+A production version can connect Supabase/Auth/Postgres for real student accounts, RLS, shared admin data, push notifications and verified attendance imports.
